@@ -94,6 +94,8 @@ def health():
 
 
 @app.post("/")
+@app.post("/answer")
+@app.post("/{path:path}")
 async def answer(req: Request):
     started = time.time()
     question = (await req.json())["question"]
